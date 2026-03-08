@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html dir="ltr" lang="en">
 <head>
-    <title>Bookstore API Test Report</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        .header { color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
-        .status { color: #28a745; font-weight: bold; }
-        .info { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0; }
-    </style>
+    <meta charset="utf-8">
+    <title>Allure Report</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="plugin/screen-diff/styles.css">
 </head>
 <body>
-    <h1 class="header">Bookstore API Test Report</h1>
-    <div class="info">
-        <p><strong>Status:</strong> <span class="status">Tests Completed</span></p>
-        <p><strong>Environment:</strong> dev</p>
-        <p><strong>Generated:</strong> $(date)</p>
-        <p><strong>Repository:</strong> <a href="https://github.com/GalynaUdaltsova/bookstore-api-tests">GalynaUdaltsova/bookstore-api-tests</a></p>
+    <div id="alert"></div>
+    <div id="content">
+        <span class="spinner">
+            <span class="spinner__circle"></span>
+        </span>
     </div>
-    <h2>Test Results</h2>
-    <p>This is a basic test report. Full Allure reports will be available once test execution is properly configured.</p>
-    <p>Check the GitHub Actions workflow logs for detailed test execution results.</p>
+    <div id="popup"></div>
+    <script src="app.js"></script>
+    <script src="plugin/behaviors/index.js"></script>
+    <script src="plugin/packages/index.js"></script>
+    <script src="plugin/screen-diff/index.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVWC4GKEYS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FVWC4GKEYS', {
+          'allureVersion': 'dev',
+          'reportUuid': 'd9dceeef-6567-45b2-99e6-0ee258f6618f',
+          'single_file': false
+        });
+    </script>
 </body>
 </html>
