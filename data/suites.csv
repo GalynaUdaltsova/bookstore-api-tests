@@ -1,3 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Mar 08 12:19:39 UTC 2026","Sun Mar 08 12:19:40 UTC 2026","1758","","tests.books.BooksApiTests","","tests.books.BooksApiTests","testCreateBook_Success","Create book - Success","Verify that a new book can be created successfully"
-"passed","Sun Mar 08 12:19:39 UTC 2026","Sun Mar 08 12:19:40 UTC 2026","1742","","tests.authors.AuthorsApiTests","","tests.authors.AuthorsApiTests","testCreateAuthor_Success","Create author - Success","Verify that a new author can be created successfully"
