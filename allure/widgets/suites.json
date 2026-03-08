@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"afc21a256abd2d89dfa87e9d35180a3d","name":"tests.authors.AuthorsApiTests","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}},{"uid":"27d2f96f7dfbde85c3a94682b1e964c8","name":"tests.books.BooksApiTests","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
