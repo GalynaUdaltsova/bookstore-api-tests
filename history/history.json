@@ -1,1 +1,1 @@
-{}
+{"fc0a92906538a4ece44e366d0c4ba70f":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"1d4138620f9200e","status":"passed","time":{"start":1773002351993,"stop":1773002353897,"duration":1904}}]},"bd76238786e5bcc00f8efa91e4492ede":{"statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1},"items":[{"uid":"edf098bedb2564df","status":"failed","statusDetails":"Expected status code 400 but got 200 ==> expected: <400> but was: <200>","time":{"start":1773002351993,"stop":1773002353857,"duration":1864}}]}}
