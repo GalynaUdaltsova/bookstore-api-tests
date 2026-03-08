@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Mar 08 21:58:41 UTC 2026","Sun Mar 08 21:58:43 UTC 2026","1408","","tests.books.BooksApiTests","","tests.books.BooksApiTests","testCreateBook_Success","Create book - Success","Verify that a new book can be created successfully"
-"passed","Sun Mar 08 21:58:41 UTC 2026","Sun Mar 08 21:58:43 UTC 2026","1409","","tests.authors.AuthorsApiTests","","tests.authors.AuthorsApiTests","testCreateAuthor_Success","Create author - Success","Verify that a new author can be created successfully"
+"passed","Sun Mar 08 22:31:17 UTC 2026","Sun Mar 08 22:31:19 UTC 2026","1403","","tests.books.BooksApiTests","","tests.books.BooksApiTests","testCreateBook_Success","Create book - Success","Verify that a new book can be created successfully"
+"failed","Sun Mar 08 22:31:17 UTC 2026","Sun Mar 08 22:31:19 UTC 2026","1369","","tests.authors.AuthorsApiTests","","tests.authors.AuthorsApiTests","testCreateAuthor_Success","Create author - Success400","Verify that a new author can be created successfully"
