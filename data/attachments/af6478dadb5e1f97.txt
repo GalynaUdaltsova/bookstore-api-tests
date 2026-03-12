@@ -1,0 +1,1 @@
+Book(id=1306, title=Updated a414171d-f29f-4d46-94bd-eee221bc89b5, description=Description-ef7a3f96-03fe-48a7-8a37-b63c9af5f82f, pageCount=1235, excerpt=Excert-705e0506-23b3-4477-b87c-66da8e875e0d, publishDate=2019-02-22T11:20:22)
