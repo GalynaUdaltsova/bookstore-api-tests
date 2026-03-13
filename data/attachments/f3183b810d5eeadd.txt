@@ -1,1 +1,0 @@
-Book(id=351, title=Title-e0638039-3b52-48ad-971f-2d3fbb689a75, description=Description-ed2e51ef-890b-4da1-85ae-7699c11be7f1, pageCount=1298, excerpt=Excert-e4576fd6-04c5-4bf1-bac0-984e4a3ef570, publishDate=2023-01-03T09:39:58)
