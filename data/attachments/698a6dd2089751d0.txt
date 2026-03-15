@@ -1,1 +1,0 @@
-Book(id=6318, title=Title-ef122c61-e9d1-49e3-9832-a9690cc8339d, description=Description-a4698fa4-63ca-4ad5-ba66-e366e1ae4714, pageCount=5997, excerpt=Excert-eea31cb9-68d5-4875-b0e6-461e76c789cd, publishDate=2020-03-15T11:01:35.721530766)
