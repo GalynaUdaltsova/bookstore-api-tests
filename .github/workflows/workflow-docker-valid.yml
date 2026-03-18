@@ -64,14 +64,14 @@ jobs:
       - name: Run tests inside Docker
         run: |
           docker run --rm \
-            -e ENV=${{ github.event.inputs.environment }} \
+            -e ENV=${{ github.event.inputs.environment || 'qa'}} \
             -e API_BASE_URL=${{ secrets.API_BASE_URL }} \
             -v ${{ github.workspace }}/allure-results:/app/target/allure-results \
             -v ${{ github.workspace }}/test-results:/app/target/surefire-reports \
             -v ${{ github.workspace }}/allure-report:/app/allure-report \
             bookstore-tests \
             bash -c "
-              mvn test -Dmaven.test.failure.ignore=true -Dgroups=${{ github.event.inputs.test_groups }}
+              mvn test -Dmaven.test.failure.ignore=true -Dgroups=${{ github.event.inputs.test_groups || 'smoke'}}
               cp -r target/site/allure-maven-plugin/* /app/allure-report/
             "
 
