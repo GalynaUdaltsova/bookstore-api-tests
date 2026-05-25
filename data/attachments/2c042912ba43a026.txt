@@ -1,1 +1,0 @@
-Author(id=6670, idBook=2997, firstName=FirstName3ef4b91e-0f23-410e-820f-f87b500f7b08, lastName=LastNamea917ce71-c1c8-4e68-9c9b-b7f0a4c6ee9c)
