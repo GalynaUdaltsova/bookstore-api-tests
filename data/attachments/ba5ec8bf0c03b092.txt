@@ -1,0 +1,1 @@
+Author(id=67, idBook=9961, firstName=FirstName064d9e1b-6a21-4152-ba4f-6ea6e98569ea, lastName=LastName44f80cd7-514d-4cde-ba9c-9464cc9adf0e)
