@@ -54,26 +54,35 @@ jobs:
 
       - name: Copy existing history
         run: |
+          mkdir -p allure-results/history
+
           if [ -d gh-pages-history/history ]; then
-            mkdir -p allure-report/history
-            cp -r gh-pages-history/history/* allure-report/history/
+            cp -r gh-pages-history/history/* allure-results/history/
             echo "Restored history from gh-pages"
           else
             echo "No existing history found"
           fi
+
       - name: Run tests inside Docker
         run: |
           docker run --rm \
-            -e ENV=${{ github.event.inputs.environment || 'qa'}} \
+            -e ENV=${{ github.event.inputs.environment || 'qa' }} \
             -e API_BASE_URL=${{ secrets.API_BASE_URL }} \
             -v ${{ github.workspace }}/allure-results:/app/target/allure-results \
             -v ${{ github.workspace }}/test-results:/app/target/surefire-reports \
-            -v ${{ github.workspace }}/allure-report:/app/allure-report \
             bookstore-tests \
             bash -c "
               mvn test -Dmaven.test.failure.ignore=true -Dgroups=${{ github.event.inputs.test_groups || 'smoke'}}
-              cp -r target/site/allure-maven-plugin/* /app/allure-report/
             "
+
+      - name: Generate Allure Report
+        if: always()
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/allure-results:/app/allure-results \
+            -v ${{ github.workspace }}/allure-report:/app/allure-report \
+            bookstore-tests \
+            allure generate /app/allure-results --clean -o /app/allure-report
 
       - name: Upload Allure results
         if: always()
@@ -89,20 +98,6 @@ jobs:
         with:
           name: allure-report-${{ github.event.inputs.environment }}
           path: allure-report/
-          retention-days: 30
-
-      - name: Save history
-        if: always()
-        run: |
-          mkdir -p allure-history
-          cp -r allure-report/history/* allure-history/ 2>/dev/null || echo "No history to save"
-
-      - name: Upload Allure history
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-history-${{ github.event.inputs.environment }}
-          path: allure-history/
           retention-days: 30
 
       - name: Upload test results
@@ -132,13 +127,6 @@ jobs:
           name: allure-report-${{ github.event.inputs.environment }}
           path: allure-report
 
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: gh-pages
-        continue-on-error: true
-
       - name: Deploy Allure report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -155,8 +143,8 @@ jobs:
     steps:
       - name: Notify success
         if: needs.test.result == 'success'
-        run: echo "✅ All tests passed successfully!"
+        run: echo "All tests passed successfully!"
 
       - name: Notify failure
         if: needs.test.result == 'failure'
-        run: echo "❌ Tests failed. Check the logs and Allure report."
+        run: echo "Tests failed. Check the logs and Allure report."
